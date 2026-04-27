@@ -37,19 +37,31 @@
   }
   
   object buenosAires{
-    const presidenteConYerba = true
+    var presidenteActual = presidente1
+
+  
     
     method puedeVisitarseCon(unVehiculo){
       return unVehiculo.esRapido()
     }
     
-    method recuerdoTipico(){
-      if (presidenteConYerba){
-        return "mate con yerba"
-     } 
-      else {
-       return "mate sin yerba"
-     }
+    method recuerdoTipico() = presidenteActual.mate()
+
+    method cambiarPresidente(unPresidente){
+      presidenteActual = unPresidente
+    }
+      
+
+}
+object presidente1{
+  method mate(){
+    return "mate con yerba"
+  }
+}
+
+object presidente2{
+  method mate(){
+    return "mate sin yerba"
   }
 }
   object bagdad{
@@ -74,7 +86,7 @@
   
   object superChatarraEspecial{
     
-    var municiones = 10
+    const municiones = 10
     
     method tieneCombustible(){
       return municiones > 0
@@ -82,7 +94,7 @@
   }
   
   object antiguallaBlindada{
-    var gangster = 20
+    const gangster = 20
     
     method tieneCombustible(){
       return gangster > 0
@@ -90,7 +102,7 @@
   }
     
   object superConvertible{
-    var combustible = 50
+    const combustible = 50
     
     method tieneCombustible(){
       return combustible > 0
